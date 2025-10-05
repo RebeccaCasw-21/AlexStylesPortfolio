@@ -1,78 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Styles Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  <header>
-    <h1>Alex Styles</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about" title="Learn more about Alex">About Me</a></li>
-      </ul>
-    </nav>
-  </header>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
 
-  <main>
-    <!-- About Me Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hi, I'm Alex Styles—a passionate designer and developer with a background in visual design and front-end development.</p>
-    </section>
+.card {
+  width: 45%;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <div class="portfolio-grid">
-        <!-- Placeholder thumbnails -->
-        <a href="project1.html"><img src="project1-thumbnail.jpg" alt="Project 1" /></a>
-        <a href="project2.html"><img src="project2-thumbnail.jpg" alt="Project 2" /></a>
-        <a href="project3.html"><img src="project3-thumbnail.jpg" alt="Project 3" /></a>
-        <!-- Add more as needed -->
-      </div>
-    </section>
+/* Responsive styles */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+  h1 {
+    font-size: 1.5rem;
+  }
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send</button>
-      </form>
-    </section>
-
-    <section>
-    <!-- Trigger -->
-    <a href="#" onclick="openModal()">View Details</a>
-
-    <!-- Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Project Title</h2>
-            <p>Detailed description of the project goes here.</p>
-        </div>
-      </div>
-    </section>
-    </main>
-
-  <footer>
-    <p>Thank you for visiting Alex Styles’ portfolio!</p>
-  </footer>
-</body>
-</html>
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
