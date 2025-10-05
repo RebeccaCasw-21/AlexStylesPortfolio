@@ -29,8 +29,32 @@ body {
     font-size: 1.5rem;
   }
 
+  /* No backslashes needed here */   
   .container {
     flex-direction: column;
     align-items: center;
-  }
+
+    .tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}  }
 }
